@@ -15,7 +15,7 @@ local M = {
       --   percentage = 0.15, -- percentage of the shade to apply to the inactive window
       -- },
       styles = {
-        keywords = { "italic" },
+        -- keywords = { "italic" },
         functions = { "italic" },
       },
       integrations = {

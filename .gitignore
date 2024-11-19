@@ -1,0 +1,4 @@
+*~
+.emacs.d/session.*
+.emacs.d/#*#
+.config/tmux/plugins
