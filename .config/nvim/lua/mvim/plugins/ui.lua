@@ -95,14 +95,14 @@ local M = {
           return ""
         end
 
-        local current_mark = "—"
+        local current_mark = "?"
 
         local mark_idx = harpoon.get_current_index()
         if mark_idx ~= nil then
           current_mark = tostring(mark_idx)
         end
 
-        return string.format("󰛢 %s/%d", current_mark, total_marks)
+        return string.format("󰐃 %s/%d", current_mark, total_marks)
       end
 
       return {
@@ -117,7 +117,7 @@ local M = {
         },
         sections = {
           lualine_a = { Mo.U.lualine.components.mode },
-          lualine_b = { Mo.U.lualine.components.branch, harpoon_component },
+          lualine_b = { harpoon_component, Mo.U.lualine.components.branch },
           lualine_c = {
             Mo.U.lualine.components.diff,
             Mo.U.lualine.components.diagnostics,
@@ -129,9 +129,9 @@ local M = {
             Mo.U.lualine.components.dap,
             -- Mo.U.lualine.components.lsp,
             -- lualine.components.lsp,
+            Mo.U.lualine.components.filetype,
             Mo.U.lualine.components.treesitter,
             Mo.U.lualine.components.spaces,
-            Mo.U.lualine.components.filetype,
             Mo.U.lualine.components.filesize,
             -- lualine.components.lazy,
           },
@@ -206,7 +206,7 @@ local M = {
       {
         "rcarriga/nvim-notify",
         opts = {
-          timeout = 3000,
+          timeout = 5000,
           stages = "static",
           max_height = function()
             return math.floor(vim.o.lines * 0.7)

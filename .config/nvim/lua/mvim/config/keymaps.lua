@@ -2,6 +2,12 @@ local keymap = vim.keymap.set
 local harpoon_ui = require("harpoon.ui")
 local harpoon_mark = require("harpoon.mark")
 
+-- ctrl c as Escape cuz i'm lazy to reach up to the esc key
+vim.keymap.set("i", "<C-c>", "<Esc>")
+
+-- Clear search with <esc>
+keymap({ "i", "n" }, "<C-c>", "<Cmd>nohlsearch<CR><Esc>", { desc = "Escape and clear hlsearch" })
+
 -- Editing: write
 keymap("n", "<leader>w", "<Cmd>w<CR>", { desc = "Save file" })
 keymap("n", "<leader>W", "<Cmd>wa<CR>", { desc = "Save files" })
@@ -44,9 +50,6 @@ keymap("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search res
 
 keymap("v", ">", ">gv", { desc = "Visual shifting" })
 keymap("v", "<", "<gv", { desc = "Visual shifting" })
-
--- Clear search with <esc>
-keymap({ "i", "n" }, "<esc>", "<Cmd>nohlsearch<CR><Esc>", { desc = "Escape and clear hlsearch" })
 
 -- Better up/down
 keymap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, desc = "Move cursor up" })

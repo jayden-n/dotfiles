@@ -43,7 +43,7 @@ M.components = {
     color = { gui = "bold" },
     separator = {
       right = "",
-      left = "",
+      -- left = "",
     },
     -- separator = { right = "" },
   },

@@ -10,7 +10,7 @@ local M = {
       term_colors = true,
       transparent_background = Mo.C.transparent,
       styles = {
-        keywords = { "italic" },
+        -- keywords = { "italic" },
         -- functions = { "italic" },
       },
       integrations = {
@@ -19,7 +19,7 @@ local M = {
         beacon = true,
         neogit = false,
         nvimtree = false,
-        treesitter_context = false,
+        treesitter_context = true,
         rainbow_delimiters = false,
         mini = { enabled = false },
         dropbar = { enabled = false },
