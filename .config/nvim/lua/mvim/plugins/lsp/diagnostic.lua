@@ -18,6 +18,7 @@ function M.setup()
       source = false,
       spacing = 2,
       prefix = "●",
+      update_in_insert = true,
     },
     float = {
       header = "",

@@ -26,9 +26,10 @@ opt.sidescrolloff = 5
 opt.splitbelow = true
 opt.splitright = true
 opt.splitkeep = "screen" -- new
+vim.o.background = "dark"
 
 -- display
-opt.wrap = false
+opt.wrap = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.smartcase = true
@@ -95,11 +96,16 @@ opt.swapfile = false
 -- Enable smart indenting (see https://stackoverflow.com/questions/1204149/smart-wrap-in-vim)
 opt.breakindent = true
 
-opt.guicursor = {
-  "n-v-c:block", -- Normal, visual, command-line: block cursor
-  "i-ci-ve:ver25", -- Insert, command-line insert, visual-exclude: vertical bar cursor with 25% width
-  "r-cr:hor20", -- Replace, command-line replace: horizontal bar cursor with 20% height
-  "o:hor50", -- Operator-pending: horizontal bar cursor with 50% height
-  -- "a:blinkwait700-blinkoff400-blinkon250", -- All modes: blinking settings
-  -- "sm:block-blinkwait175-blinkoff150-blinkon175", -- Showmatch: block cursor with specific blinking settings
-}
+--  Set cursor to fat cursor
+-- opt.guicursor = "n-v-c:block-Cursor"
+-- set true color
+vim.opt.termguicolors = true
+
+-- opt.guicursor = {
+--   "n-v-c:block", -- Normal, visual, command-line: block cursor
+--   "i-ci-ve:ver25", -- Insert, command-line insert, visual-exclude: vertical bar cursor with 25% width
+--   "r-cr:hor20", -- Replace, command-line replace: horizontal bar cursor with 20% height
+--   "o:hor50", -- Operator-pending: horizontal bar cursor with 50% height
+--   -- "a:blinkwait700-blinkoff400-blinkon250", -- All modes: blinking settings
+--   -- "sm:block-blinkwait175-blinkoff150-blinkon175", -- Showmatch: block cursor with specific blinking settings
+-- }

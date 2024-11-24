@@ -39,7 +39,7 @@ M.components = {
 
   branch = {
     "branch",
-    icon = { " ", color = { fg = palette.pink, gui = "bold" } },
+    icon = { " " },
     color = { gui = "bold" },
     separator = {
       right = "",
@@ -55,9 +55,9 @@ M.components = {
 
   filename = {
     "filename",
-    file_status = true,
-    path = 1,
+    path = 0, -- 2 for full path
     color = { fg = palette.lavender },
+    -- file_status = true,
   },
 
   filesize = {
@@ -172,9 +172,9 @@ M.components = {
       -- return string.format("%3d/%d:%-2d", line, lines, col)
       return string.format("%d/%d:%d", line, lines, col)
     end,
-    icon = { "", color = { fg = palette.pink, gui = "bold" } },
+    icon = { "󰍒", color = { fg = palette.pink } },
     -- separator = { left = "" },
-    color = { gui = "bold" },
+    -- color = { gui = "bold" },
   },
 
   scrollbar = {

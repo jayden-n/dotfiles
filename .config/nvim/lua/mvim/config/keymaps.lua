@@ -119,8 +119,8 @@ keymap("n", "U", "<C-r>", { desc = "Redo" })
 keymap("n", "<leader>lu", "<CMD>Lazy<CR>", { desc = "Open Lazy.nvim" })
 
 -- Press gx to open the link under the cursor
-
 keymap("n", "gx", ":silent !open <cWORD><CR>", { silent = true, desc = "Open link under cursor" })
+
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
 

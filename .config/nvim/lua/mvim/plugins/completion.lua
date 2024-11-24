@@ -76,7 +76,12 @@ return {
         sources = cmp.config.sources({
           { name = "luasnip", max_item_count = 3, group_index = 1 }, -- snippets
           { name = "nvim_lsp", group_index = 2 }, -- lsp
-          { name = "path", max_item_count = 3, group_index = 3 }, -- file system paths
+          {
+            name = "path",
+            max_item_count = 3,
+            group_index = 3,
+            option = { treat_trailing_slash = true },
+          }, -- file system paths
           { name = "buffer", max_item_count = 5, group_index = 4 }, -- text within current buffer
           { name = "nvim-lsp-signature-help" },
         }),
@@ -113,6 +118,7 @@ return {
           { name = "cmdline" },
         },
       })
+      vim.cmd("highlight FloatBorder guibg=NONE")
     end,
   },
 }

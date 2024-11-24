@@ -47,6 +47,7 @@ local M = {
     },
     opts = {
       servers = {
+        angularls = {},
         gopls = {
           settings = {
             gopls = {
