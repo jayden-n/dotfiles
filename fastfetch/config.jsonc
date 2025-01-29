@@ -34,12 +34,12 @@
       "format": "{} / {} ({})",
       "keyColor": "yellow"
     },
-    {
-      "type": "disk",
-      "key": " Disk",
-      "format": "{} / {} ({})",
-      "keyColor": "blue"
-    },
+    //{
+    //  "type": "disk",
+    //  "key": " Disk",
+    //  "format": "{} / {} ({})",
+    //  "keyColor": "blue"
+    //},
     {
       "type": "battery",
       "key": " Battery",
