@@ -55,7 +55,7 @@ keyset('n', 'n', 'nzzzv', {desc = 'Jump to next search term'})
 keyset('n', 'N', 'Nzzzv', {desc = 'Jump to previous search term'})
 
 -- Pastes copied buffer and keeps it in the register
-keyset('x', '<leader>p', '\"_dP')
+-- keyset('x', '<leader>p', '\"_dP')
 
 -- Sources current buffer
 keyset('n', '<leader><leader>x', function() vim.cmd('so') end, {desc = 'Source current buffer'})
