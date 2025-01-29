@@ -8,7 +8,7 @@ shell-integration = zsh
 auto-update = check
 
 # Font 
-font-size = 20
+font-size = 18
 font-family = Berkeley Mono
 # font-style = Regular
 # font-style-italic = Oblique
