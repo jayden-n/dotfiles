@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/75bb90c3-6897-4ca0-8089-c3c9e29740b6" alt="startuptime">
+    <img src="https://github.com/user-attachments/assets/cb18b4eb-eccc-43bd-9448-2b0cabda67d5" alt="startuptime">
 </p>
 
 ## 🔧 Preparation
