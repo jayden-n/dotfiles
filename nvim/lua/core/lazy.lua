@@ -22,7 +22,7 @@ require('lazy').setup({
         enabled = true,
     },
     install = {
-        colorscheme = {'kanagawa'},
+        colorscheme = {'rose-pine'},
     },
     performance = {
         cache = {enabled = true},

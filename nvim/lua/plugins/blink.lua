@@ -26,11 +26,15 @@ return {
                 ['<C-k>'] = {'select_prev', 'fallback'},
             },
         },
+        appearance = {
+            use_nvim_cmp_as_default = true,
+        },
         sources = {
             default = {'lsp', 'path', 'snippets', 'buffer', 'lazydev'},
             providers = {
                 lsp = {
                     fallbacks = {'buffer', 'path'},
+                    max_items = 7, -- Maximum number of items to display in the menu
                 },
                 lazydev = {
                     name = 'LazyDev',
@@ -73,6 +77,7 @@ return {
                 },
             },
             menu = {
+                border = 'single',
                 draw = {
                     treesitter = {'lsp'},
                     columns = {
@@ -84,7 +89,7 @@ return {
                 auto_show = true,
                 auto_show_delay_ms = 200,
                 window = {
-                    border = 'none',
+                    border = 'single',
                     max_width = math.floor(vim.o.columns * 0.4),
                     max_height = math.floor(vim.o.lines * 0.5),
                 },

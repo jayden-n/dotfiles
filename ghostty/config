@@ -1,14 +1,14 @@
 # Ghostty theme
 # theme = catppuccin-mocha
-# theme = rose-pine-muted
-theme = Kanagawa Wave
+# theme = Kanagawa Wave
+theme = rose-pine-muted
 
 # Integrations
 shell-integration = zsh
 auto-update = check
 
 # Font 
-font-size = 18
+font-size = 20
 font-family = Berkeley Mono
 # font-style = Regular
 # font-style-italic = Oblique
@@ -61,7 +61,7 @@ mouse-hide-while-typing        = true
 link-url                       = true
 adjust-underline-position      = 3
 adjust-underline-thickness     = 1
-window-colorspace              = display-p3
+# window-colorspace              = display-p3
 # adjust-cursor-thickness        = 1
 
 # ===========================
@@ -69,7 +69,7 @@ window-colorspace              = display-p3
 # ===========================
 
 # Line height
-adjust-cell-height = 20%
+# adjust-cell-height = 20%
 
 # Set the background-opacity
 # background-opacity = 0.956
