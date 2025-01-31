@@ -67,8 +67,8 @@ return {
 
         return {
             defaults = {
-                -- formatter = 'path.filename_first',
-                formatter = 'path.dirname_first',
+                formatter = 'path.filename_first',
+                -- formatter = 'path.dirname_first',
             },
             previewers = {
                 builtin = {

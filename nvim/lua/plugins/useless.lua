@@ -5,6 +5,8 @@ return {
 
     {'wakatime/vim-wakatime', lazy = false},
 
+    {'danilamihailov/beacon.nvim'}, -- lazy calls setup() by itself
+
     {
         'windwp/nvim-autopairs',
         event = 'InsertEnter',

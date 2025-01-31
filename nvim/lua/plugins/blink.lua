@@ -34,7 +34,8 @@ return {
             providers = {
                 lsp = {
                     fallbacks = {'buffer', 'path'},
-                    max_items = 7, -- Maximum number of items to display in the menu
+                    max_items = 7,  -- Maximum number of items to display in the menu
+                    timeout_ms = 0, -- How long to wait for the provider to return before showing completions and treating it as asynchronous
                 },
                 lazydev = {
                     name = 'LazyDev',

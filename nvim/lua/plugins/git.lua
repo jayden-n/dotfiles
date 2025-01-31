@@ -9,15 +9,16 @@ return {
 
             return {
                 signs = {
-                    add = {text = Utils.icons.git.added},
-                    change = {text = Utils.icons.git.changed},
-                    delete = {text = Utils.icons.git.deleted},
-                    topdelete = {text = Utils.icons.git.deleted},
-                    changedelete = {text = Utils.icons.git.changed},
-                    untracked = {text = Utils.icons.git.added},
+                    add = {text = '┃'},
+                    change = {text = '┃'},
+                    delete = {text = '_'},
+                    topdelete = {text = '‾'},
+                    changedelete = {text = '~'},
+                    untracked = {text = '┆'},
                 },
-                current_line_blame = true,
+                current_line_blame = false,
                 current_line_blame_opts = {delay = 500},
+                max_file_length = 40000, -- Disable if file is longer than this (in lines)
                 preview_config = {
                     border = 'single',
                     title = 'Preview changes',

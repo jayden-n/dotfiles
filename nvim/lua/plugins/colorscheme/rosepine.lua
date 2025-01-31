@@ -4,10 +4,7 @@ return {
     priority = 1000,
     opts = {
         dark_variant = 'moon',
-        styles = {
-            italic = false,
-            transparency = true,
-        },
+        styles = {italic = false},
         palette = {
             moon = {
                 gold = '#f6d5a7',
@@ -15,11 +12,11 @@ return {
                 iris = '#d9c7ef',
                 rose = '#ebbcba',
                 pine = '#437e91',
-                no_bg = '#000000',
+                no_bg = '#0e0e0e',
             },
         },
         highlight_groups = {
-            -- Normal = {bg = 'no_bg'},
+            Normal = {bg = 'no_bg'},
             Directory = {fg = 'foam', bold = false},
             StatusLine = {bg = 'surface', fg = 'subtle'},
             StatusLineTerm = {link = 'StatusLine'},
