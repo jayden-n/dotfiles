@@ -9,7 +9,7 @@ auto-update = check
 
 # Font 
 font-size = 22
-font-family = Berkeley Mono
+# font-family = Berkeley Mono
 # font-style = Regular
 # font-style-italic = Oblique
 # font-style-bold = SemiBold

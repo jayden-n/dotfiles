@@ -37,10 +37,10 @@ keyset('n', '<Left>', '<Cmd>vertical resize -2<CR>', silent)
 keyset('n', '<Right>', '<Cmd>vertical resize +2<CR>', silent)
 
 -- Move to window
-keyset('n', '<C-h>', '<C-w>h', {remap = true, desc = 'Go to left window'})
-keyset('n', '<C-j>', '<C-w>j', {remap = true, desc = 'Go to lower window'})
-keyset('n', '<C-k>', '<C-w>k', {remap = true, desc = 'Go to upper window'})
-keyset('n', '<C-l>', '<C-w>l', {remap = true, desc = 'Go to right window'})
+-- keyset('n', '<C-h>', '<C-w>h', {remap = true, desc = 'Go to left window'})
+-- keyset('n', '<C-j>', '<C-w>j', {remap = true, desc = 'Go to lower window'})
+-- keyset('n', '<C-k>', '<C-w>k', {remap = true, desc = 'Go to upper window'})
+-- keyset('n', '<C-l>', '<C-w>l', {remap = true, desc = 'Go to right window'})
 
 -- Move line in Visual mode with Shift + j/k
 keyset('v', 'J', ":m '>+1<CR>gv=gv", silent)

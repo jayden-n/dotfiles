@@ -33,9 +33,11 @@ return {
             default = {'lsp', 'path', 'snippets', 'buffer', 'lazydev'},
             providers = {
                 lsp = {
-                    fallbacks = {'buffer', 'path'},
-                    max_items = 7,  -- Maximum number of items to display in the menu
-                    timeout_ms = 0, -- How long to wait for the provider to return before showing completions and treating it as asynchronous
+                    fallbacks = {'buffer'},
+                    max_items = 7,    -- Maximum number of items to display in the menu
+                    async = true,
+                    timeout_ms = 0,   -- How long to wait for the provider to return before showing completions and treating it as asynchronous
+                    score_offset = 1, -- Boost/penalize the score of the items
                 },
                 lazydev = {
                     name = 'LazyDev',
@@ -71,6 +73,7 @@ return {
                 show_on_accept_on_trigger_character = false,
             },
             list = {
+                max_items = 7,
                 -- Manual selection, if not in cmdline
                 selection = {
                     preselect = false,
@@ -88,7 +91,7 @@ return {
             },
             documentation = {
                 auto_show = true,
-                auto_show_delay_ms = 200,
+                auto_show_delay_ms = 0,
                 window = {
                     border = 'single',
                     max_width = math.floor(vim.o.columns * 0.4),

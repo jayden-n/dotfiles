@@ -2,13 +2,6 @@ local desc = Utils.plugin_keymap_desc('colorizer')
 
 return {
     'NvChad/nvim-colorizer.lua',
-    keys = {
-        {
-            '<leader>Ct',
-            '<cmd>ColorizerToggle<CR>',
-            desc = desc('Toggle highlighting of the current buffer'),
-        },
-    },
     opts = {
         filetypes = {'*'},
         user_default_options = {
