@@ -5,6 +5,23 @@ return {
     'folke/snacks.nvim',
     lazy = false,
     opts = {
+        -- indent = {
+        --     indent = {
+        --         char = '┊',
+        --     },
+        --     scope = {
+        --         enabled = false,
+        --     },
+        --     chunk = {
+        --         enabled = false,
+        --     },
+        --     filter = function(buf)
+        --         return vim.g.snacks_indent ~= false
+        --             and vim.b[buf].snacks_indent ~= false
+        --             and vim.bo[buf].buftype == ''
+        --             and vim.bo[buf].filetype ~= 'markdown'
+        --     end,
+        -- },
         bigfile = {enabled = true},
         quickfile = {enabled = true},
         gitbrowse = {enabled = true},

@@ -5,9 +5,9 @@ return {
         commentStyle = {italic = false, bold = false},
         keywordStyle = {italic = false, bold = false},
         statementStyle = {italic = false, bold = false},
-        functionStyle = {italic = false, bold = false},
+        functionStyle = {italic = true, bold = false},
         typeStyle = {italic = false, bold = false},
-        background = {dark = 'wave', light = 'lotus'},
+        background = {dark = 'dragon', light = 'lotus'},
         colors = {
             theme = {
                 all = {
@@ -27,7 +27,7 @@ return {
 
             return {
                 -- Statusline
-                StatusLine = {bg = theme.ui.bg_p1, fg = palette.sakuraPink},
+                StatusLine = {bg = theme.ui.bg_p1, fg = theme.syn.fun},
                 --- modes
                 StatusLineAccent = {bg = 'none', fg = palette.sakuraPink},
                 StatusLineInsertAccent = {bg = 'none', fg = palette.springGreen},
@@ -70,7 +70,7 @@ return {
                 PmenuThumb = {bg = theme.ui.bg_p2},
 
                 --- misc
-                ModeMsg = {fg = palette.sakuraPink, bold = false},
+                ModeMsg = {fg = theme.syn.comment, bold = false},
                 WinSeparator = {fg = theme.ui.bg_p2},
                 TelescopeSelection = {bg = theme.ui.bg_p2},
                 Cursor = {bg = 'none'},

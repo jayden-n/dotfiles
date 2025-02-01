@@ -1,7 +1,6 @@
 # Ghostty theme
-# theme = catppuccin-mocha
-# theme = Kanagawa Wave
-theme = rose-pine-muted
+# theme = rose-pine-muted
+theme = Kanagawa Dragon
 
 # Integrations
 shell-integration = zsh
@@ -60,7 +59,7 @@ mouse-hide-while-typing        = true
 link-url                       = true
 adjust-underline-position      = 3
 adjust-underline-thickness     = 1
-# window-colorspace              = display-p3
+window-colorspace              = display-p3
 # adjust-cursor-thickness        = 1
 
 # ===========================

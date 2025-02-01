@@ -8,6 +8,9 @@ keyset({'i', 'n', 'v'}, '<C-c>', function()
     return '<Esc>'            -- Always act as Esc
 end, {expr = true, silent = true, desc = 'Escape and clear search highlights'})
 
+keyset('n', '<Leader>mm', '<C-w>_<C-w>|', {desc = 'full si[z]e'})
+keyset('n', '<Leader>mn', '<C-w>=', {desc = 'even si[Z]e'})
+
 keyset('n', '<C-a>', 'gg<S-v>G', {desc = 'Select all'})
 keyset('i', 'jj', '<Esc>')
 keyset('n', 'U', '<C-r>', silent)
