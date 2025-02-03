@@ -17,7 +17,6 @@ keyset('n', 'U', '<C-r>', silent)
 keyset('n', '<C-x>', 'ciw', silent)
 keyset('n', 'yc', 'yy<cmd>normal gcc<CR>p', silent)
 keyset('n', '<CR>', 'o', silent)
-keyset('n', '<S-CR>', 'O', silent)
 
 -- Editing: write
 keyset('n', '<leader>w', '<Cmd>w<CR>', {desc = 'Save file'})
