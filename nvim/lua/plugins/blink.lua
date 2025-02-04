@@ -58,7 +58,7 @@ return {
         signature = {
             enabled = true,
             window = {
-                border = 'none',
+                border = 'single',
                 max_width = math.floor(vim.o.columns * 0.4),
                 max_height = math.floor(vim.o.lines * 0.5),
             },
@@ -81,7 +81,7 @@ return {
                 },
             },
             menu = {
-                -- border = 'single',
+                border = 'single',
                 draw = {
                     treesitter = {'lsp'},
                     columns = {
@@ -93,7 +93,7 @@ return {
                 auto_show = true,
                 auto_show_delay_ms = 0,
                 window = {
-                    border = 'none',
+                    border = 'single',
                     max_width = math.floor(vim.o.columns * 0.4),
                     max_height = math.floor(vim.o.lines * 0.5),
                 },

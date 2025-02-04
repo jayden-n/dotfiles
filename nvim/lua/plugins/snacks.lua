@@ -1,5 +1,5 @@
+---@diagnostic disable: undefined-field
 local desc = Utils.plugin_keymap_desc('snacks')
-local root_path = os.getenv('HOME') .. '/notes/scratch'
 
 return {
     'folke/snacks.nvim',
@@ -29,45 +29,57 @@ return {
         notifier = {enabled = false},
         statuscolumn = {enabled = false},
         words = {enabled = false},
-        scratch = {
-            root = root_path,
-            win = {width = 150, height = 40, border = 'single'},
+        picker = {
+            sources = {
+                files = {hidden = true},
+            },
+            debug = {
+                scores = true, -- show scores in the list
+            },
+            layout = {
+                preset = 'ivy',
+                cycle = false,
+            },
+            matcher = {
+                frecency = true,
+            },
+            win = {
+                input = {
+                    keys = {
+                        -- to close the picker on ESC instead of going to normal mode,
+                        -- add the following keymap to your config
+                        ['<Esc>'] = {'close', mode = {'n', 'i'}},
+                        -- I'm used to scrolling like this in LazyGit
+                        ['J'] = {'preview_scroll_down', mode = {'i', 'n'}},
+                        ['K'] = {'preview_scroll_up', mode = {'i', 'n'}},
+                        ['H'] = {'preview_scroll_left', mode = {'i', 'n'}},
+                        ['L'] = {'preview_scroll_right', mode = {'i', 'n'}},
+                    },
+                },
+            },
         },
     },
     keys = function()
         local snacks = require('snacks')
         return {
             {'<leader>gg', function() Snacks.lazygit({configure = false}) end, desc = 'Lazygit'},
-
             {
-                '<leader>.',
+                '<M-b>',
                 function()
-                    vim.ui.input({
-                        prompt = 'Enter scratch buffer title: ',
-                        default = '',
-                    }, function(t)
-                        if not vim.fn.isdirectory(root_path) then
-                            vim.fn.mkdir(root_path, 'p')
-                        end
-
-                        local title = t ~= '' and t:gsub('%s+', '_') or 'Untitled'
-                        snacks.scratch.open({
-                            ft = 'markdown',
-                            name = title .. '_' .. os.date('%Y-%m-%d-%H-%M-%S'),
-                            win = {
-                                title = title,
-                            },
-                        })
-                    end)
+                    Snacks.picker.git_branches({
+                        layout = 'ivy',
+                    })
                 end,
-                desc = desc('Open a scratch buffer'),
+                desc = 'Keymaps',
             },
-            {
-                '<leader>S',
-                -- function() snacks.scratch.select() end,
-                function() Utils.fzf.scratch_select() end,
-                desc = desc('Select a scratch buffer'),
-            },
+
+            {'<leader>ff', function() Snacks.picker.files() end, desc = 'Find Files'},
+            {'<leader>fg', function() Snacks.picker.grep() end, desc = 'Grep'},
+            {'<leader>fw', function() Snacks.picker.grep_word() end, desc = 'Visual selection or word', mode = {'n', 'x'}},
+            {'<leader>fr', function() Snacks.picker.recent() end, desc = 'Recent'},
+            {'<leader>fc', function() Snacks.picker.grep_buffers() end, desc = 'Grep Open Buffers'},
+            {'<leader>fb', function() Snacks.picker.buffers() end, desc = 'Buffers'},
+            {'<leader>fd', function() Snacks.picker.diagnostics() end, desc = 'Diagnostics'},
             {
                 '<leader>cR',
                 function() snacks.rename.rename_file() end,

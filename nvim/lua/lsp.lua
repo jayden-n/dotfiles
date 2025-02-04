@@ -2,7 +2,6 @@ local M = {}
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 local methods = vim.lsp.protocol.Methods
-local fzf = require('fzf-lua')
 
 ---@param client vim.lsp.Client
 ---@param bufnr integer
@@ -17,7 +16,6 @@ local function on_attach(client, bufnr)
 
     keyset('n', '<leader>rn', vim.lsp.buf.rename, 'Rename')
     keyset({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, 'Code Action')
-    keyset('n', '<leader>td', vim.lsp.buf.type_definition, 'Type Definition')
     keyset('n', '<leader>sd', vim.lsp.buf.signature_help, 'Signature Documentation')
     keyset('n', 'K', vim.lsp.buf.hover, 'Hover Documentation')
 
@@ -25,11 +23,13 @@ local function on_attach(client, bufnr)
     -- keyset('n', 'gD', Utils.cmd_center(vim.lsp.buf.declaration), 'Goto Declaration')
     -- keyset('n', 'gi', Utils.cmd_center(vim.lsp.buf.implementation), 'Goto Implementation')
 
-    -- Using fzf-lua for navigation and diagnostics
-    keyset('n', 'gd', fzf.lsp_definitions, 'Goto Definition')
-    keyset('n', 'gr', fzf.lsp_references, 'Goto References')
-    keyset('n', 'gD', fzf.lsp_declarations, 'Goto Declaration')
-    keyset('n', 'gi', fzf.lsp_implementations, 'Goto Implementation')
+    keyset('n', 'gd', function() Snacks.picker.lsp_definitions() end, 'Goto Definition')
+    keyset('n', 'gr', function() Snacks.picker.lsp_references() end, 'Goto References')
+    keyset('n', 'gi', function() Snacks.picker.lsp_implementations() end, 'Goto Implementation')
+    keyset('n', 'gt', function() Snacks.picker.lsp_type_definitions() end, 'Goto Implementation')
+
+    -- keyset('n', '<leader>td', vim.lsp.buf.type_definition, 'Type Definition')
+    keyset('n', 'gD', vim.lsp.buf.declaration, 'Goto Declaration')
 
     keyset('n', '[d', Utils.cmd_center(vim.diagnostic.goto_prev), 'Previous diagnostic')
     keyset('n', ']d', Utils.cmd_center(vim.diagnostic.goto_next), 'Next diagnostic')
@@ -41,10 +41,6 @@ local function on_attach(client, bufnr)
     keyset('n', '<leader>fa', function()
         require('conform').format({async = true, lsp_fallback = true})
     end, 'Format current buffer with LSP')
-
-    keyset('n', '<leader>lc', function()
-        Utils.fzf.inspect_lsp_client()
-    end, 'Inspect LSP Client configuration')
 
     -- Create a command `:Format` local to the LSP buffer
     vim.api.nvim_create_user_command('Format', function(args)

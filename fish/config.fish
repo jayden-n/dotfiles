@@ -19,5 +19,4 @@ abbr td 'tmux detach'
 # SOURCE CONFIG FILES
 abbr fis 'source ~/.config/fish/config.fish'
 
-#fastfetch
 starship init fish | source
