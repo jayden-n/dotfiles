@@ -1,16 +1,43 @@
 -- not so useless...
 return {
-    -- tmux navigator
+    -- file name
     {
-        'aserowy/tmux.nvim',
+        'b0o/incline.nvim',
+        -- event = {'BufReadPre', 'BufNewFile'},
+        dependencies = {'nvim-web-devicons'},
         config = function()
-            return require('tmux').setup {
-                resize = {
-                    enable_default_keybindings = true,
+            local helpers = require('incline.helpers')
+            local devicons = require('nvim-web-devicons')
+            require('incline').setup({
+                window = {
+                    padding = 0,
+                    margin = {horizontal = 0},
                 },
-            }
+                render = function(props)
+                    local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
+                    if filename == '' then
+                        filename = '[404]'
+                    end
+                    if vim.bo[props.buf].modified then
+                        filename = '[+] ' .. filename
+                    end
+                    local ft_icon, ft_color = devicons.get_icon_color(filename)
+                    local modified = vim.bo[props.buf].modified
+                    return {
+                        ft_icon
+                        and {' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color)}
+                        or '',
+                        ' ',
+                        {filename, gui = modified and 'bold,italic' or 'bold'},
+                        ' ',
+                        guibg = '#44406e',
+                    }
+                end,
+            })
         end,
     },
+
+    -- tmux navigator
     {
         'christoomey/vim-tmux-navigator',
         cmd = {
@@ -34,8 +61,6 @@ return {
     {'mbbill/undotree', cmd = 'UndotreeToggle'},
 
     {'wakatime/vim-wakatime', lazy = false},
-
-    {'danilamihailov/beacon.nvim'}, -- lazy calls setup() by itself
 
     {
         'windwp/nvim-autopairs',

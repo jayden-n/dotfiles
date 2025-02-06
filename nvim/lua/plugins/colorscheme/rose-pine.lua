@@ -9,7 +9,7 @@ return {
         highlight_groups = {
             -- Normal = {bg = 'no_bg'},
             Directory = {fg = 'foam', bold = false},
-            StatusLine = {bg = 'surface', fg = 'iris'},
+            StatusLine = {bg = 'surface', fg = 'subtle'},
             StatusLineTerm = {link = 'StatusLine'},
             StatusLineNC = {link = 'StatusLine'},
             --- gitsigns

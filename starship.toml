@@ -1,17 +1,22 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-format = """$all $fill $cmd_duration
+format = """$all$cmd_duration
 $character"""
 
 add_newline = true
 
 [character]
-success_symbol = '[󰘧](bold green)'
-error_symbol = '[󰘧](bold red)'
+success_symbol = '[➜](bold green)'
+error_symbol = '[✗](bold red)'
 
 # [cmd_duration]
 # min_time = 10
 # show_milliseconds = true
 # format = "[$duration](bright-black)"
+
+[directory]
+truncation_length = 4
+truncation_symbol = '…/'
+truncate_to_repo = false
 
 [fill]
 symbol = ' '
@@ -40,15 +45,3 @@ disabled = true
 
 [battery]
 disabled = true
-
-[env_var.SOFTWARE_UPDATE_AVAILABLE]
-variable = 'SOFTWARE_UPDATE_AVAILABLE'
-format = '[$env_value]($style)'
-default = ''
-style = 'cyan'
-
-[env_var.DOTFILES_UPDATE_AVAILABLE]
-variable = 'DOTFILES_UPDATE_AVAILABLE'
-format = '[$env_value]($style)'
-default = ''
-style = 'cyan'
