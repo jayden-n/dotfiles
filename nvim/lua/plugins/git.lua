@@ -1,5 +1,3 @@
-local octo_desc = Utils.plugin_keymap_desc('octo')
-
 return {
     {
         'lewis6991/gitsigns.nvim',

@@ -26,9 +26,9 @@ return {
                 ['<C-k>'] = {'select_prev', 'fallback'},
             },
         },
-        appearance = {
-            use_nvim_cmp_as_default = true,
-        },
+        -- appearance = {
+        --     use_nvim_cmp_as_default = true,
+        -- },
         sources = {
             default = {'lsp', 'path', 'snippets', 'buffer', 'lazydev'},
             providers = {
@@ -59,6 +59,7 @@ return {
             enabled = true,
             window = {
                 border = 'single',
+                winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None',
                 max_width = math.floor(vim.o.columns * 0.4),
                 max_height = math.floor(vim.o.lines * 0.5),
             },
@@ -82,6 +83,7 @@ return {
             },
             menu = {
                 border = 'single',
+                winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None',
                 draw = {
                     treesitter = {'lsp'},
                     columns = {
@@ -94,6 +96,7 @@ return {
                 auto_show_delay_ms = 0,
                 window = {
                     border = 'single',
+                    winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None',
                     max_width = math.floor(vim.o.columns * 0.4),
                     max_height = math.floor(vim.o.lines * 0.5),
                 },

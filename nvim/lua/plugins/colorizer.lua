@@ -1,5 +1,3 @@
-local desc = Utils.plugin_keymap_desc('colorizer')
-
 return {
     'NvChad/nvim-colorizer.lua',
     opts = {

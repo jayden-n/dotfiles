@@ -38,12 +38,6 @@ keyset('n', '<Down>', '<Cmd>resize -2<CR>', silent)
 keyset('n', '<Left>', '<Cmd>vertical resize -2<CR>', silent)
 keyset('n', '<Right>', '<Cmd>vertical resize +2<CR>', silent)
 
--- Move to window
--- keyset('n', '<C-h>', '<C-w>h', {remap = true, desc = 'Go to left window'})
--- keyset('n', '<C-j>', '<C-w>j', {remap = true, desc = 'Go to lower window'})
--- keyset('n', '<C-k>', '<C-w>k', {remap = true, desc = 'Go to upper window'})
--- keyset('n', '<C-l>', '<C-w>l', {remap = true, desc = 'Go to right window'})
-
 -- Move line in Visual mode with Shift + j/k
 keyset('v', 'J', ":m '>+1<CR>gv=gv", silent)
 keyset('v', 'K', ":m '<-2<CR>gv=gv", silent)
@@ -58,8 +52,3 @@ keyset('n', 'N', 'Nzzzv', {desc = 'Jump to previous search term'})
 
 -- Pastes copied buffer and keeps it in the register
 -- keyset('x', '<leader>p', '\"_dP')
-
--- Sources current buffer
-keyset('n', '<leader><leader>x', function() vim.cmd('so') end, {desc = 'Source current buffer'})
-keyset('n', '<leader>X', ':.lua<CR>', {desc = 'Source current line'})
-keyset('v', '<leader>X', ':.lua<CR>', {desc = 'Source current selection'})
