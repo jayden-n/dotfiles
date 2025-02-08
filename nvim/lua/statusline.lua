@@ -142,8 +142,14 @@ local vcs = function()
     })
 end
 
-local function filetype()
-    return string.format(' %s ', vim.bo.filetype)
+-- local function filetype()
+--     return string.format(' %s ', vim.bo.filetype)
+-- end
+local devicons = require('nvim-web-devicons')
+local function filetype_icon()
+    local ft = vim.bo.filetype
+    local icon, _ = devicons.get_icon_by_filetype(ft)
+    return icon and string.format(' %s %s ', icon, ft) or string.format(' %s ', ft)
 end
 
 local function modified()
@@ -172,7 +178,7 @@ function M.active()
         '%#Statusline#',
         '%=%#StatusLineExtra#',
         lsp(),
-        filetype(),
+        filetype_icon(),
         lineinfo(),
     })
 end

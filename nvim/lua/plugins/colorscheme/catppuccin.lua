@@ -10,6 +10,7 @@ local M = {
             term_colors = true,
             transparent_background = false,
             no_italic = true,
+            no_bold = true,
             integrations = {
                 blink_cmp = true,
                 lsp_trouble = true,
@@ -31,6 +32,29 @@ local M = {
                     },
                 },
             },
+            custom_highlights = function(colors)
+                return {
+                    --- status line
+                    StatusLine = {fg = colors.lavender},
+
+                    --- gitsigns
+                    StatusLineGitSignsAdd = {fg = colors.green, bg = colors.mantle},
+                    StatusLineGitSignsChange = {fg = colors.yellow, bg = colors.mantle},
+                    StatusLineGitSignsDelete = {fg = colors.red, bg = colors.mantle},
+
+                    --- diagnostics
+                    StatusLineDiagnosticSignError = {fg = colors.red, bg = colors.mantle},
+                    StatusLineDiagnosticSignWarn = {fg = colors.yellow, bg = colors.mantle},
+                    StatusLineDiagnosticSignInfo = {fg = colors.sky, bg = colors.mantle},
+                    StatusLineDiagnosticSignHint = {fg = colors.mauve, bg = colors.mantle},
+
+                    --- misc
+                    TabLineSel = {bg = colors.pink},
+                    CmpBorder = {fg = colors.surface2},
+                    Pmenu = {bg = colors.none},
+                    ModeMsg = {fg = colors.sapphire},
+                }
+            end,
         })
     end,
 }
