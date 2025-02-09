@@ -52,7 +52,7 @@ local M = {
                     TabLineSel = {bg = colors.pink},
                     CmpBorder = {fg = colors.surface2},
                     Pmenu = {bg = colors.none},
-                    ModeMsg = {fg = colors.sapphire},
+                    ModeMsg = {fg = colors.flamingo},
                 }
             end,
         })
